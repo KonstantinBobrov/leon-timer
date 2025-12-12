@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres_db
+    username: admin
+    password: password123
+    hikari:
+      connection-timeout: 5000
+  flyway:
+    schemas:
+      - leon

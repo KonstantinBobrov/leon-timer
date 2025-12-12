@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: leon-timer
+  profiles:
+    active:
+      - local
+  threads:
+    virtual:
+      enabled: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+      group:
+        readiness:
+          include: db  # enable db check
+          show-details: when_authorized
