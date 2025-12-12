@@ -57,7 +57,7 @@ public class TimerService {
         } catch (CannotCreateTransactionException e) {
             logger.warn(DB_TEMPORARILY_UNAVAILABLE, e);
         } catch (InterruptedException _) {
-            logger.error("The application was interapted");
+            logger.error("The application was interrupted");
         }
     }
 
@@ -81,7 +81,7 @@ public class TimerService {
         }
     }
 
-    public Status getDataSourceStatus() {
+    private Status getDataSourceStatus() {
         return Optional.ofNullable(dataSourceHealthIndicator.health())
                 .map(Health::getStatus)
                 .orElse(Status.DOWN);
