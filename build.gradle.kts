@@ -4,6 +4,10 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.7"
 }
 
+ext {
+	set("testcontainers.version", "1.19.8")
+}
+
 group = "com.pharus"
 version = "0.0.1-SNAPSHOT"
 description = "Demo project for Leon"
@@ -31,6 +35,11 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 	testImplementation("org.mockito:mockito-core:5.21.0")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+//	testImplementation("org.springframework.boot:spring-boot-testcontainers")
+//	testImplementation("org.testcontainers:testcontainers")
+	testImplementation("org.testcontainers:junit-jupiter")
+	testImplementation("org.testcontainers:postgresql")
+	testImplementation("io.rest-assured:rest-assured:5.5.6")
 }
 
 tasks.withType<Test> {
